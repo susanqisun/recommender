@@ -1,14 +1,6 @@
-import streamlit as st 
-import streamlit.components.v1 as stc 
-import pickle
-import pandas as pd 
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
-import pandas as pd
-import numpy as np
-import pickle
-import copy
-from surprise import Reader, Dataset
-from surprise import SVD, NormalPredictor, BaselineOnly, KNNBasic, NMF
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import CountVectorizer
+streamlit==0.79.0
+pandas==1.2.3
+numpy==1.18.5
+matplotlib==3.3.2
+seaborn==0.11.0
+scikit_learn==0.24.1
