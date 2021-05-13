@@ -1,13 +1,14 @@
-click==7.1.1
-Flask==1.1.2
-gunicorn==20.0.4
-streamlit==0.53.0
-numpy==1.18.1
-pandas==1.0.3
-requests==2.23.0
-scikit-image==0.16.2
-scikit-learn==0.22
-scikit-surprise==1.1.0
-scipy==1.4.1
-seaborn==0.10.1
-spacy==2.2.3
+import streamlit as st 
+import streamlit.components.v1 as stc 
+import pickle
+import pandas as pd 
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
+import pandas as pd
+import numpy as np
+import pickle
+import copy
+from surprise import Reader, Dataset
+from surprise import SVD, NormalPredictor, BaselineOnly, KNNBasic, NMF
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
