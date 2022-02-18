@@ -181,7 +181,7 @@ def main():
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
         with st.beta_expander('MovieLens Data',expanded=False):
-             st.dataframe(df13.head(10))
+             #st.dataframe(df13.head(10))
                 
             # Filter
             movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
