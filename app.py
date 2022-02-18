@@ -163,7 +163,7 @@ def main():
     #st.text("Based on the movie reviews from MovieLens data")
     stc.html(picture,height=330)
     menu = ["Home","Content Based Filtering","Collaborative Based Filtering"]
-    st.sidebar.title("Navigation")
+    st.sidebar.title("Menu")
     choice = st.sidebar.radio("Go to",menu)
 
     #choice = st.sidebar.selectbox("Menu",menu)
@@ -185,11 +185,11 @@ def main():
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
         with st.expander('Movie Details'):
              #st.dataframe(df13.head(10))
-                
+             df[df['title']== movie_choice]['overview'].values   
             # Filter
             movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
             year = df[df['title']== movie_choice]['year'].values
-            genre = df[df['title']== movie_choice]['genres'].values         
+            genre = df[df['title']== movie_choice]['genres'].values[0]       
             
         # Layout
         c1,c2,c3 = st.columns([1,2,1])
@@ -217,7 +217,7 @@ def main():
         search_term = st.selectbox("Please scroll down to see the list of movies and select a movie you like to get recommendations",movies_title_list)
         #search_term = st.text_input("Search")
         
-        num_of_rec = st.sidebar.number_input("Number",4,30,5)
+        num_of_rec = st.sidebar.number_input("Number of Recommendations",4,30,5)
         if st.button("Recommend"):
             if search_term is not None:
                 try:
