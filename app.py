@@ -187,7 +187,7 @@ def main():
              st.dataframe(df[df['title']== movie_choice]['overview'])   
             # Filter
              movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
-             year = df[df['title']== movie_choice]['year'].values
+             year = df[df['title']== movie_choice]['year'].values[0]
              genre = df[df['title']== movie_choice]['genres'].values[0]       
             
         # Layout
@@ -213,7 +213,7 @@ def main():
         st.subheader("Recommend Movies based on Movie Overview")
         cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
         movies_title_list = df['title'].tolist()
-        search_term = st.selectbox("Please scroll down to see the list of movies and select a movie you like to get recommendations",movies_title_list)
+        search_term = st.selectbox("Please scroll down to see the list of movies and select a movie you'd like to get recommendations",movies_title_list)
         #search_term = st.text_input("Search")
         
         num_of_rec = st.sidebar.number_input("Number of Recommendations",4,30,5)
