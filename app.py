@@ -59,7 +59,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 def prediction_item(item_id):
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)
     model=pickle.load(open('SVD.pkl', 'rb'))
@@ -73,7 +73,7 @@ def prediction_item(item_id):
     return predictions
 
 def pred_movies(movie_list):
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv02',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)    
     # Store the id of users
@@ -91,7 +91,7 @@ def pred_movies(movie_list):
 
 def collab_model(movie_list,top_n=10):
     # Importing data
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv02',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)
     indices = pd.Series(movies_df['title'])
@@ -165,7 +165,7 @@ def main():
     menu = ["Home","Content Based Filtering","Collaborative Based Filtering"]
     choice = st.sidebar.selectbox("Menu",menu)
 
-    df = load_data("https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv")
+    df = load_data("https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv")
     df11 = df.drop('desc02', 1)
     df12 = df11.drop('description', 1)
     df12a = df12.drop('genres', 1)
@@ -180,7 +180,7 @@ def main():
         #st.dataframe(df13.head(20))
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
-        with st.beta_expander('MovieLens Data',expanded=False):
+        with st.write('Click + to check movie information'):
              #st.dataframe(df13.head(10))
                 
             # Filter
@@ -189,18 +189,18 @@ def main():
             genre = df[df['title']== movie_choice]['genres'].values         
             
         # Layout
-        c1,c2,c3 = st.beta_columns([1,2,1])
+        c1,c2,c3 = st.columns([1,2,1])
         
         with c1:
-            with st.beta_expander("Year"):
+            with st.expander("Year"):
                 st.success(year)
 
         with c2:
-            with st.beta_expander("Movie link"):
+            with st.expander("Movie link"):
                 st.write(movie_link)
 
         with c3:
-            with st.beta_expander("Genre"):
+            with st.expander("Genre"):
                 st.success(genre)
        
         st.subheader("MovieLens Data (Sample)")
