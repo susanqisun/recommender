@@ -188,7 +188,7 @@ def main():
             # Filter
              movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
              year = df[df['title']== movie_choice]['year'].values[0]
-             genre = df[df['title']== movie_choice]['genres'].values[0]       
+             genre = df[df['title']== movie_choice]['genres'].values[0][0]       
             
         # Layout
         c1,c2,c3 = st.columns([1,2,1])
@@ -216,7 +216,7 @@ def main():
         search_term = st.selectbox("Please scroll down to see the list of movies and select a movie you'd like to get recommendations",movies_title_list)
         #search_term = st.text_input("Search")
         
-        num_of_rec = st.sidebar.number_input("Number of Recommendations",4,30,5)
+        num_of_rec = st.sidebar.number_input("Number of Recommendations",4,20,5)
         if st.button("Recommend"):
             if search_term is not None:
                 try:
@@ -243,7 +243,7 @@ def main():
             
         # User-based preferences
         st.write('### Select Your Five Favorite Movies')
-        movie_1 = st.selectbox('Fisrt Option',title_list)
+        movie_1 = st.selectbox('Fisrt Option(best)',title_list)
         movie_2 = st.selectbox('Second Option',title_list)
         movie_3 = st.selectbox('Third Option',title_list)
         movie_4 = st.selectbox('Fourth Option',title_list)
