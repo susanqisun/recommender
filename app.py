@@ -188,7 +188,7 @@ def main():
             # Filter
              movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
              year = df[df['title']== movie_choice]['year'].values[0]
-             genre = df[df['title']== movie_choice]['genres'].values[0][0]       
+             genre = df[df['title']== movie_choice]['genres'].values[0]       
             
         # Layout
         c1,c2,c3 = st.columns([1,2,1])
