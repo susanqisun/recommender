@@ -184,7 +184,7 @@ def main():
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
         with st.expander('Movie Overview'):
-             st.dataframe(df[df['title']== movie_choice]['overview'].values)   
+             st.dataframe(df[df['title']== movie_choice]['overview'])   
             # Filter
              movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
              year = df[df['title']== movie_choice]['year'].values
