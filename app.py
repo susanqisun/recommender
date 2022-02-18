@@ -180,7 +180,7 @@ def main():
         #st.dataframe(df13.head(20))
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
-        with st.beta_expander('MovieLens Data',expanded=False):
+        with #st.beta_expander('MovieLens Data',expanded=False):
             #st.dataframe(df13.head(10))
                 
             # Filter
