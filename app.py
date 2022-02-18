@@ -180,8 +180,8 @@ def main():
         #st.dataframe(df13.head(20))
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
-        with st.write('Click + to check movie information'):
-             #st.dataframe(df13.head(10))
+        with st.beta_expander('Movie Details'):
+             st.dataframe(df13.head(10))
                 
             # Filter
             movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
