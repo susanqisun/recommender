@@ -59,7 +59,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 def prediction_item(item_id):
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)
     model=pickle.load(open('SVD.pkl', 'rb'))
