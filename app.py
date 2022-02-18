@@ -156,14 +156,17 @@ def search_term_if_not_found(term,df):
 picture = """
  <center><img src="https://raw.githubusercontent.com/susanqisun/test/main/netflix_movies_cover.jpeg" alt="movie" style="width:710px;height:250px;"></center>
 """    
-    
+
 def main():
 
     st.title("Movie Recommender System")
-    #st.text("Based on overview of movies from MovieLens data")
+    #st.text("Based on the movie reviews from MovieLens data")
     stc.html(picture,height=330)
     menu = ["Home","Content Based Filtering","Collaborative Based Filtering"]
-    choice = st.sidebar.selectbox("Menu",menu)
+    st.sidebar.title("Navigation")
+    choice = st.sidebar.radio("Go to",menu)
+
+    #choice = st.sidebar.selectbox("Menu",menu)
 
     df = load_data("https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv")
     df11 = df.drop('desc02', 1)
