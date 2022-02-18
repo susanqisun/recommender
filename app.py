@@ -165,7 +165,7 @@ def main():
     menu = ["Home","Content Based Filtering","Collaborative Based Filtering"]
     choice = st.sidebar.selectbox("Menu",menu)
 
-    df = load_data("https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv")
+    df = load_data("https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv")
     df11 = df.drop('desc02', 1)
     df12 = df11.drop('description', 1)
     df12a = df12.drop('genres', 1)
