@@ -216,7 +216,7 @@ def main():
         search_term = st.selectbox("Please scroll down to see the list of movies and select a movie you'd like to get recommendations",movies_title_list)
         #search_term = st.text_input("Search")
         
-        num_of_rec = st.sidebar.number_input("Number of Recommendations",4,20,5)
+        num_of_rec = st.sidebar.number_input("Number of Recommendations",5,20,5)
         if st.button("Recommend"):
             if search_term is not None:
                 try:
