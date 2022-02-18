@@ -183,13 +183,13 @@ def main():
         #st.dataframe(df13.head(20))
         movies_title_list = df['title'].tolist()
         movie_choice = st.selectbox("Select a Movie Title",movies_title_list)
-        with st.expander('Movie Details'):
+        with st.expander('Movie Overview'):
              #st.dataframe(df13.head(10))
-             df[df['title']== movie_choice]['overview'].values   
+             Movie Overview = df[df['title']== movie_choice]['overview'].values   
             # Filter
-            movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
-            year = df[df['title']== movie_choice]['year'].values
-            genre = df[df['title']== movie_choice]['genres'].values[0]       
+             movie_link = df[df['title'] == movie_choice]['img_link'].values[0]
+             year = df[df['title']== movie_choice]['year'].values
+             genre = df[df['title']== movie_choice]['genres'].values[0]       
             
         # Layout
         c1,c2,c3 = st.columns([1,2,1])
