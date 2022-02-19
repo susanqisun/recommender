@@ -254,14 +254,16 @@ def main():
         if st.button("Recommend"):
             try:
                 with st.spinner('Running...'):
-                    top_recommendations = collab_model(movie_list=fav_movies, top_n=10)
+                    cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
+                    top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
+                    #top_recommendations = collab_model(movie_list=fav_movies, top_n=10)
                 st.title("Recommendations:")
                 for i,j in enumerate(top_recommendations):
                     st.subheader(str(i+1)+'. '+j)
             except:
-                cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
-                top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
-                #st.error("Please try again!")
+                #cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
+                #top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
+                st.error("Please try again!")
 
 
 if __name__ == '__main__':
