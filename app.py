@@ -243,11 +243,12 @@ def main():
             
         # User-based preferences
         st.write('### Select Your Five Favorite Movies')
-        movie_1 = st.selectbox('Fisrt Option(best)',title_list)
-        movie_2 = st.selectbox('Second Option',title_list)
-        movie_3 = st.selectbox('Third Option',title_list)
-        movie_4 = st.selectbox('Fourth Option',title_list)
-        movie_5 = st.selectbox('Last Option',title_list)        
+        movies_title_list = df['title'].tolist()
+        movie_1 = st.selectbox('Fisrt Option(best)',movies_title_list)
+        movie_2 = st.selectbox('Second Option',movies_title_list)
+        movie_3 = st.selectbox('Third Option',movies_title_list)
+        movie_4 = st.selectbox('Fourth Option',movies_title_list)
+        movie_5 = st.selectbox('Last Option',movies_title_list)        
         fav_movies = [movie_1,movie_2,movie_3,movie_4,movie_5]
         #fav_movies = ['Heat','Jumanji','Balto','Nixon','Casino']
         cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
