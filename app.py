@@ -243,7 +243,7 @@ def main():
         st.write('## Collaborative Filtering')
             
         # User-based preferences
-        st.write('### Select Your Five Favorite Movies')
+        st.write('### Recommend Movies based on Movie Ratings. Please Select Your Five Favorite Movies')
         movies_title_list = df['title'].tolist()
         movie_1 = st.selectbox('Fisrt Option(best)',movies_title_list)
         movie_2 = st.selectbox('Second Option',movies_title_list)
