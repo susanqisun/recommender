@@ -179,7 +179,7 @@ def main():
     # Data Loading
     title_list = load_movie_titles('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv')
 
-    if choice == "Home":
+    if choice == "Movie Details":
         #st.subheader("MovieLens Data (Sample)")
         #st.dataframe(df13.head(20))
         movies_title_list = df['title'].tolist()
