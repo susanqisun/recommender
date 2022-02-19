@@ -248,8 +248,8 @@ def main():
         movie_3 = st.selectbox('Third Option',title_list)
         movie_4 = st.selectbox('Fourth Option',title_list)
         movie_5 = st.selectbox('Last Option',title_list)        
-        fav_movies = [movie_1,movie_2,movie_3,movie_4,movie_5]
-        #fav_movies = ['Heat','Jumanji','Balto','Nixon','Casino']
+        #fav_movies = [movie_1,movie_2,movie_3,movie_4,movie_5]
+        fav_movies = ['Heat','Jumanji','Balto','Nixon','Casino']
         
         if st.button("Recommend"):
             try:
@@ -259,7 +259,7 @@ def main():
                 for i,j in enumerate(top_recommendations):
                     st.subheader(str(i+1)+'. '+j)
             except:
-                st.error("Oops! Looks like this algorithm does't work.                              I'll need to fix it!")
+                st.error("Please try again!")
 
 
 if __name__ == '__main__':
