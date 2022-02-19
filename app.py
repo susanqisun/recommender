@@ -259,7 +259,8 @@ def main():
                 for i,j in enumerate(top_recommendations):
                     st.subheader(str(i+1)+'. '+j)
             except:
-                top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,num_of_rec)
+                cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
+                top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
                 #st.error("Please try again!")
 
 
