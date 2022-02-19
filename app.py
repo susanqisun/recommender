@@ -162,7 +162,7 @@ def main():
     st.title("Movie Recommender System")
     st.text("By Susan Qi Sun")
     stc.html(picture,height=330)
-    menu = ["Home","Content Based Filtering","Collaborative Based Filtering"]
+    menu = ["Home","Content Based Filtering","Collaborative Filtering"]
     st.sidebar.title("Menu")
     choice = st.sidebar.radio("Go to",menu)
 
@@ -238,8 +238,8 @@ def main():
     
 
     else:
-        #if choice == 'Collaborative Based Filtering':
-        st.write('## Collaborative Based Filtering')
+        #if choice == 'Collaborative Filtering':
+        st.write('## Collaborative Filtering')
             
         # User-based preferences
         st.write('### Select Your Five Favorite Movies')
