@@ -59,7 +59,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
 def prediction_item(item_id):
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)
     model=pickle.load(open('SVD.pkl', 'rb'))
@@ -73,7 +73,7 @@ def prediction_item(item_id):
     return predictions
 
 def pred_movies(movie_list):
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)    
     # Store the id of users
@@ -91,7 +91,7 @@ def pred_movies(movie_list):
 
 def collab_model(movie_list,top_n=10):
     # Importing data
-    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv',sep = ',',delimiter=',')
+    movies_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv',sep = ',',delimiter=',')
     ratings_df = pd.read_csv('https://raw.githubusercontent.com/susanqisun/DAV6300/main/data/ratings_small.csv')
     ratings_df.drop(['timestamp'], axis=1,inplace=True)
     indices = pd.Series(movies_df['title'])
@@ -176,7 +176,7 @@ def main():
     df13 = df12b.drop('Unnamed: 0', 1).sort_values(by='year', ascending=False)
      
     # Data Loading
-    title_list = load_movie_titles('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new.csv')
+    title_list = load_movie_titles('https://raw.githubusercontent.com/susanqisun/recommender/main/movie_new02.csv')
 
     if choice == "Home":
         #st.subheader("MovieLens Data (Sample)")
