@@ -161,9 +161,9 @@ def main():
 
     st.title("Movie Recommender System")
     st.text("Created by Susan Qi Sun, May 2021")
-    st.text("Based on data collected from ")
+    st.text("Based on data collected from TMDB and GroupLens")
     stc.html(picture,height=330)
-    menu = ["Home","Content Based Filtering","Collaborative Filtering"]
+    menu = ["Movie Details","Content Based Filtering","Collaborative Filtering"]
     st.sidebar.title("Menu")
     choice = st.sidebar.radio("Go to",menu)
 
