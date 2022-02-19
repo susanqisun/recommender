@@ -160,7 +160,8 @@ picture = """
 def main():
 
     st.title("Movie Recommender System")
-    st.text("By Susan Qi Sun")
+    st.text("Created by Susan Qi Sun, May 2021")
+    st.text("Based on data collected from ")
     stc.html(picture,height=330)
     menu = ["Home","Content Based Filtering","Collaborative Filtering"]
     st.sidebar.title("Menu")
