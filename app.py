@@ -255,7 +255,7 @@ def main():
         if st.button("Recommend"):
             try:
                 with st.spinner('Running...'):
-                    top_recommendations = get_recommendation('Tig',cosine_sim_mat,df,5)
+                    top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
                     
                     for row in top_recommendations.iterrows():
                         rec_title = row[1][0]
@@ -263,6 +263,7 @@ def main():
                         rec_year = row[1][2]
                         
                         stc.html(RESULT_TEMP.format(rec_title,rec_overview,rec_year),height=330)
+                        st.balloons()
                     #top_recommendations = collab_model(movie_list=fav_movies, top_n=10)
                 #st.title("Recommendations:")
                  
