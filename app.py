@@ -250,12 +250,12 @@ def main():
         movie_5 = st.selectbox('Last Option',title_list)        
         fav_movies = [movie_1,movie_2,movie_3,movie_4,movie_5]
         #fav_movies = ['Heat','Jumanji','Balto','Nixon','Casino']
+        cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
         
         if st.button("Recommend"):
             try:
                 with st.spinner('Running...'):
-                    cosine_sim_mat = vectorize_text_to_cosine_mat(df['desc02'])
-                    top_recommendations = get_recommendation(movie_1,cosine_sim_mat,df,5)
+                    top_recommendations = get_recommendation(movie_2,cosine_sim_mat,df,5)
                     #top_recommendations = collab_model(movie_list=fav_movies, top_n=10)
                 st.title("Recommendations:")
                 for i,j in enumerate(top_recommendations):
