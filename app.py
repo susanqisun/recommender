@@ -163,7 +163,7 @@ def main():
     st.text("Created by Susan Qi Sun, May 2021")
     st.text("Based on data collected from TMDB and GroupLens")
     stc.html(picture,height=330)
-    menu = ["Movie Details","Content Based Filtering","Collaborative Filtering"]
+    menu = ["Movie Details","Content Based Filtering","Hybrid Recommender System"]
     st.sidebar.title("Menu")
     choice = st.sidebar.radio("Go to",menu)
 
@@ -265,7 +265,7 @@ def main():
                         rec_year = row[1][2]
                         
                         stc.html(RESULT_TEMP.format(rec_title,rec_overview,rec_year),height=330)
-                        st.balloons()
+                        #st.balloons()
                     #top_recommendations = collab_model(movie_list=fav_movies, top_n=10)
                 #st.title("Recommendations:")
                  
